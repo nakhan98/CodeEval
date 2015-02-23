@@ -1,3 +1,7 @@
+/* CodeEval - Swap Case
+ * https://www.codeeval.com/open_challenges/96/
+ */
+
 using System.IO;
 using System.Collections.Generic;
 

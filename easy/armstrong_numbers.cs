@@ -26,15 +26,19 @@ class Program
         while (!reader.EndOfStream)
         {
             string line = reader.ReadLine();
+
             if (null == line)
                 continue;
+
             int sum = 0;
             string numberString = line.Trim();
             int stringLength = numberString.Length;
+
             foreach(char c in numberString){
                 int val = c - '0';
                 sum += power(val, stringLength);
             }
+
             if (sum.ToString() == numberString)
                 System.Console.Out.WriteLine("True");
             else

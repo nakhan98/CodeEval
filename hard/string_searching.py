@@ -1,34 +1,20 @@
 #!/usr/bin/env python
-# CodeEval - String Searching (incomplete)
+# CodeEval - String Searching (partial)
 # https://www.codeeval.com/open_challenges/28/
 
 import sys
-import re
-#import ipdb
+from fnmatch import fnmatch
 
 def is_substr(x, y):
-    ''' Determine if y is a substring of x.
-        Assuming both '*' and '\*' not in same line'''
-    
-    #ipdb.set_trace()
-    if "*" in y and "\*" not in y:
-        y = y.replace("*", "\w*")
-        #print(y)
-        if re.search(y, x):
-            return "true"
-    elif "\*" in y:
-        y = y.replace("\*", "*")
-        if re.search(y, x):
-            return "true"
+    y = "*" + y + "*"
+    if fnmatch(x, y):
+        return "true"
     else:
-        if re.search(y, x):
-            return "true"
-    
-    return "false"
+        return "false"
     
 
 def main():
-    with open(sys.argv[1], "rt") f:
+    with open(sys.argv[1], "rt") as f:
         lines = f.readlines()
     for line in lines:
         line = line.strip()

@@ -2,3 +2,4 @@ Hello,ell
 This is good, is
 CodeEval,C*Eval
 Old,Young
+mo*b, mo\*b

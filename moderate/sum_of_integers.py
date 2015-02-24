@@ -1,27 +1,17 @@
 #!/usr/bin/env python2
-# CodeEval - Sum of Integers (Partially correct)
+# CodeEval - Sum of Integers 
 # https://www.codeeval.com/open_challenges/17/
 
 from sys import argv
+import ipdb
 
-def largest_sum(int_list):
-    if len(int_list) == 1:
-        return int_list[0]
-
-    sum_ = int_list[0]
-    block_size = 1;
-    while block_size <= len(int_list):
-        i, j = 0, 0
-        while j <= len(int_list):
-            j = i + block_size
-            sub_list = int_list[i:j]
-            _ = calc_sum(sub_list)
-            if _ > sum_:
-                sum_ = _
-            i += 1
-        block_size += 1
-
-    return sum_
+def max_subarray(A):
+    ipdb.set_trace()
+    max_ending_here = max_so_far = A[0]
+    for x in A[1:]:
+        max_ending_here = max(x, max_ending_here + x)
+        max_so_far = max(max_so_far, max_ending_here)
+    return max_so_far
 
 
 def calc_sum(int_list):
@@ -38,7 +28,8 @@ def main():
     for line in lines:
         numbers = line.split(",")
         numbers = [int(i) for i in numbers]
-        sum_ = largest_sum(numbers)
+        #sum_ = largest_sum(numbers)
+        sum_ = max_subarray(numbers)
         print(sum_)
 
 

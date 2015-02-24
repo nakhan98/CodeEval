@@ -3,10 +3,8 @@
 # https://www.codeeval.com/open_challenges/17/
 
 from sys import argv
-import ipdb
 
 def max_subarray(A):
-    ipdb.set_trace()
     max_ending_here = max_so_far = A[0]
     for x in A[1:]:
         max_ending_here = max(x, max_ending_here + x)

@@ -30,9 +30,7 @@ class Program
             }
 
             if (amount == 0)
-            {
                 return coinsToReturn;
-            }
         }
         return coinsToReturn;
     }

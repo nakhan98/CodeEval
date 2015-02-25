@@ -43,7 +43,7 @@ class Program
             string line = reader.ReadLine();
             if (null == line)
                 continue;
-            // do something with line
+
             int amount = int.Parse(line.Trim());
             List<int> numberCoins = CalcNumbCoins(amount);
             System.Console.WriteLine(numberCoins.Count);

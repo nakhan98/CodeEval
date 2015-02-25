@@ -16,17 +16,12 @@ class Program
         foreach (int coin in coins)
         {
             float quotient = amount / (float)coin;
-            if (quotient > 1)
+            if (quotient >= 1)
             {
                 int numberOfCoins = (int)quotient;
                 for (int i=0; i < numberOfCoins; i++)
                     coinsToReturn.Add(coin);
                 amount -= numberOfCoins * coin;
-            }
-            else if (quotient == 1)
-            {
-                coinsToReturn.Add(coin);
-                amount -= coin;
             }
 
             if (amount == 0)

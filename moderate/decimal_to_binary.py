@@ -5,13 +5,11 @@
 
 from sys import argv
 
-
 def power(x,y):
-    '''Raise x to y'''
+    '''Raise x to power y'''
     orig_y = y
     if y < 0:
         y *= -1
-
     i = 0
     a = 1
     while i < y:
@@ -29,21 +27,19 @@ def convert_to_binary(dn):
     if dn == 0:
         return dn
     powers_collected = []
-    y = 0
-    while dn:
-        while True:
-            if power(2, y) == dn:
-                dn = 0
-                powers_collected.append(y)
-                break
-
-            if power(2, y) > dn:
-                y -= 1
-                dn -= power(2,y)
-                powers_collected.append(y)
-                y = 0
-            else:
-                y += 1
+    exponent = 0
+    while True:
+        if power(2, exponent) == dn:
+            dn = 0
+            powers_collected.append(exponent)
+            break
+        elif power(2, exponent) > dn:
+            exponent -= 1
+            dn -= power(2,exponent)
+            powers_collected.append(exponent)
+            exponent = 0
+        else:
+            exponent += 1
 
     binary_number_list = [0] * (powers_collected[0]+1)
     for i in powers_collected:

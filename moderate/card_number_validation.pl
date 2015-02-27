@@ -4,8 +4,7 @@
 
 use strict;
 
-sub check_number
-{
+sub check_number {
     my $number_str = shift @_;
     $number_str = reverse $number_str;
     my @number_str_arr = split //, $number_str;

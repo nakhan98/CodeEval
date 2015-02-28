@@ -46,3 +46,4 @@ while(my $number = <INFILE>) {
     $number =~ s/\s//gc;
     print check_number($number), "\n";
 }
+close(INFILE);

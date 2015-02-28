@@ -17,7 +17,7 @@ cash_register = {
     'TWENTY': 20.00,
     'FIFTY': 50.00,
     'ONE HUNDRED': 100.00
-    }
+}
 
 
 def cc(float_):

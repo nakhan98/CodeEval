@@ -35,17 +35,17 @@ def text_number(number_str):
     number_str = number_str.zfill(9)
     number = []
     if int(number_str[:3]):
-        millions = str( int(number_str[:3]) )
+        millions = number_str[:3]
         millions = convert_number(millions) + "Million"
         number.append(millions)
 
     if int(number_str[3:6]):
-        thousands = str( int(number_str[3:6]) )        
+        thousands = number_str[3:6]        
         thousands = convert_number(thousands) + "Thousand"
         number.append(thousands)
 
     if int(number_str[6:]):
-        hundreds = str( int(number_str[6:]) )
+        hundreds = number_str[6:]
         hundreds = convert_number(hundreds)
         number.append(hundreds)
 

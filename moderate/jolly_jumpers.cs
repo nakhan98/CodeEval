@@ -8,7 +8,6 @@ using System.Collections.Generic;
 
 class JollyJumpers
 {
-
     static List<int> ConvertToInts(List<string> stringList)
     {
         List<int> numbers = new List<int>();
@@ -50,7 +49,6 @@ class JollyJumpers
             {
                 string line = r.ReadLine();
                 List<string> stringList = new List<string>(line.Split(' '));
-                //stringList.RemoveAt();
                 List<int> numbers = ConvertToInts(stringList);
                 int n = numbers[0];
                 numbers.RemoveAt(0);

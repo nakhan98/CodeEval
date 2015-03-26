@@ -6,7 +6,7 @@ using System.IO;
 using System.Text;
 using System.Collections.Generic;
 
-class Program
+class Pangrams
 {
     static string alphabets = "abcdefghijklmnopqrstuvwxyz";
 
@@ -22,7 +22,6 @@ class Program
 
         return missingChars.ToString();
     }
-
 
     static void Main(string[] args)
     {

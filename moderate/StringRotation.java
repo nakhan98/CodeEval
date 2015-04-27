@@ -1,6 +1,6 @@
 /**
- * CodeEval - String Rotation
- * https://www.codeeval.com/open_challenges/76/
+ * - CodeEval: String Rotation
+ * - https://www.codeeval.com/open_challenges/76/
  */
 
 import java.io.*;

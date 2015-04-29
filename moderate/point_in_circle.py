@@ -12,11 +12,12 @@ def extract_data(line):
     """Extract center, radius and point data from a line"""
     #pdb.set_trace()
     center, radius, point = line.rstrip().split(';')
-    center = re.findall(r"([\-\d\.]+)", center)
+    regex = r"([\-\d\.]+)"
+    center = re.findall(regex, center)
     center = [float(i) for i in center]
-    radius = re.search(r"([\-\d\.]+)", radius).group(1)
+    radius = re.search(regex, radius).group(1)
     radius = float(radius)
-    point = re.findall(r"([\-\d\.]+)", point)
+    point = re.findall(regex, point)
     point = [float(i) for i in point]
     return (center, radius, point)
 

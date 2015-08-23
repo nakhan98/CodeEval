@@ -5,19 +5,17 @@
 """
 
 from sys import argv
-from urllib import quote, unquote
+from urllib import unquote
 
-SAFE_CHARS = ",/?:@&=+$#"
-
-def process_url(url):
+def decode_url(url):
     """
     - Convert to lowercase
     - Remove port 80
-    - do hex encoding
+    - Decode hex codes
     """
     url = url.lower()
     url = url.replace(":80", "")
-    url = quote(url, safe=SAFE_CHARS)
+    url = unquote(url)
     return url
 
 
@@ -25,8 +23,8 @@ def main():
     with open(argv[1]) as fh:
         for line in fh:
             url1, url2 = line.strip().split(';')
-            url1 = process_url(unquote(url1))
-            url2 = process_url(unquote(url2))
+            url1 = decode_url(url1)
+            url2 = decode_url(url2)
             print(url1 == url2)
 
 
